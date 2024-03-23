@@ -1,0 +1,43 @@
+/*******************************************************
+ *----------ROFI COLORS di manuel v1.0.20032024---------
+ *******************************************************/
+* {
+/*----------BACKGROUND----------*/
+    background-color:            rgba ( 0, 0, 0, 0 % );
+    background:                  rgba ( 35, 38, 52, 90 % );
+    normal-background:           rgba ( 35, 38, 52, 0 % );
+    active-background:           rgba ( 35, 38, 52, 0 % );
+    urgent-background:           rgba ( 45, 48, 59, 15 % );
+    selected-normal-background:  rgba ( 41, 44, 60, 100 % );
+    selected-active-background:  rgba ( 41, 44, 60, 100 % );
+    selected-urgent-background:  rgba ( 165, 66, 66, 100 % );
+    alternate-normal-background: rgba ( 35, 38, 52, 0 % );
+    alternate-active-background: rgba ( 35, 38, 52, 0 % );
+    alternate-urgent-background: rgba ( 75, 81, 96, 90 % );
+
+/*----------FOREGROUND----------*/
+    foreground:                  rgba ( 165, 173, 206, 100 % );
+    normal-foreground:           @foreground;
+    active-foreground:           rgba ( 101, 172, 255, 100 % );
+    urgent-foreground:           rgba ( 204, 102, 102, 100 % );
+    selected-normal-foreground:  rgba ( 198, 208, 245, 100 % );
+    selected-active-foreground:  rgba ( 249, 249, 249, 100 % );
+    selected-urgent-foreground:  rgba ( 249, 249, 249, 100 % );
+    alternate-normal-foreground: @foreground;
+    alternate-active-foreground: @active-foreground;
+    alternate-urgent-foreground: @urgent-foreground;
+
+/*----------OTHERS----------*/
+    lightbg:                     rgba ( 238, 232, 213, 100 % );
+    lightfg:                     rgba ( 88, 104, 117, 100 % );
+    border-color:                rgba ( 124, 131, 137, 100 % );
+    spacing:                     5;
+    separatorcolor:              rgba ( 45, 48, 59, 1 % );
+
+
+
+
+
+
+
+}

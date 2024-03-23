@@ -1,0 +1,2 @@
+#!/bin/sh
+feh --no-fehbg --bg-fill '/home/manuel/.config/wallpapers/wallpaper_elden-ring.jpg' 
