@@ -8,7 +8,7 @@
   border-radius: 10px;
   min-height: 0;
   /*font-family: Material Design Icons, JetBrainsMono Nerd Font;*/
-  font-family: Roboto;
+  font-family: Roboto, Weather Icons;
   font-size: 15px;
 }
 
@@ -17,7 +17,7 @@ window#waybar {
   transition-property: background-color;
   transition-duration: 0.5s;
   opacity: 1.0;
-  color: @text;
+  color: @teal;
   margin: 3px 1px;
   padding: 3px 8px;
 }
@@ -47,7 +47,7 @@ window#waybar.hidden {
 
 #workspaces button.active {
   color: @text;
-  background-color: @crust;
+  background-color: @transparent1;
 }
 
 #workspaces button:hover {
@@ -59,14 +59,6 @@ window#waybar.hidden {
 
 #workspaces button.urgent {
   background-color: #f38ba8;
-}
-
-#hyprland-window {
-background-color: @crust;
-color: @text;
-margin: 1px 1px;
-margin-left: 5px;
-opacity: unset;
 }
 
 #memory,
@@ -85,6 +77,7 @@ opacity: unset;
 #custom-logo,
 #custom-notifications,
 #backlight,
+#custom-weather,
 #tray {
   border-radius: 4px;
   margin: 3px 1px;
@@ -122,7 +115,7 @@ opacity: unset;
 /*  padding-right: 7px;*/
 /*  padding-left: 7px;*/
 /*  margin-left: 5px;*/
-/*  font-size: 15px;*/
+    font-size: 18px;
 /*  border-radius: 8px 0px 0px 8px;*/
   color: @text;
 }
@@ -178,7 +171,7 @@ opacity: unset;
   background-color: @crust;
   color: @text;
   padding-right: 10px;
-  font-size: 18;
+  font-size: 18px;
 }
 
 #clock {
@@ -190,7 +183,14 @@ opacity: unset;
 #custom-power {
   background-color: @crust;
   color: @text;
+  font-size: 18px;
 }
+
+/*#custom-weather{*/
+/*  font: "Weather Icons";*/
+/*  font-size: 15px;*/
+
+/*}*/
 
 tooltip {
 border-radius: 8px;

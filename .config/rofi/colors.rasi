@@ -28,6 +28,10 @@
     alternate-urgent-foreground: @urgent-foreground;
 
 /*----------OTHERS----------*/
+
+    surface0:                    rgba ( 65, 69, 89, 100 % );
+    overlay1:                    rgba ( 131, 139, 167, 100 % );
+    teal:                        rgba ( 129, 200, 190, 100 % );
     lightbg:                     rgba ( 238, 232, 213, 100 % );
     lightfg:                     rgba ( 88, 104, 117, 100 % );
     border-color:                rgba ( 124, 131, 137, 100 % );

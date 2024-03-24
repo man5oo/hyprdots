@@ -3,7 +3,7 @@
  * Maintainer: joekamprad [joekamprad //a_t// endeavouros.com]
  *******************************************************/
 configuration {
-    font:            "Roboto Regular 12";
+    font:            "Roboto Regular 15";
     show-icons:      false;
     icon-theme:      "Papirus";
     scroll-method:   0;
@@ -16,9 +16,9 @@ configuration {
 window {
     background-color: @background;
     border:           0;
-    padding:          12;
+    padding:          16;
     transparency:     "real";
-    width:            40px;
+    width:            50px;
     location:         northeast;
     y-offset:       -1;
     x-offset:       -3;
@@ -33,6 +33,14 @@ element {
     border:  0;
     padding: 1px;
 }
+
+message {
+    border:       2px 0px 0px;
+    border-color: @separatorcolor;
+/*    padding:      10px;*/
+    text-color: @teal;
+}
+
 element-text {
     background-color: inherit;
     text-color:       inherit;
@@ -50,8 +58,8 @@ element.normal.active {
     text-color:       @active-foreground;
 }
 element.selected.normal {
-    background-color: @selected-normal-background;
-    text-color:       @selected-normal-foreground;
+    background-color: @normal-background;
+    text-color:       @teal;
 }
 element.selected.urgent {
     background-color: @selected-urgent-background;
@@ -94,7 +102,7 @@ button.selected {
 }
 inputbar {
     spacing:    0;
-    text-color: @normal-foreground;
+    text-color: @teal;
     padding:    1px;
 }
 case-indicator {
@@ -103,11 +111,11 @@ case-indicator {
 }
 entry {
     spacing:    0;
-    text-color: @normal-foreground;
+    text-color: @teal;
 }
 prompt {
     spacing:    0;
-    text-color: @normal-foreground;
+    text-color: @teal;
 }
 inputbar {
     children:   [ prompt,textbox-prompt-colon,entry,case-indicator ];

@@ -6,11 +6,12 @@
     "spacing": 0,
     "height": 20,
 
-    "modules-left": ["hyprland/workspaces","hyprland/window"],
+    "modules-left": ["hyprland/workspaces", "hyprland/window"], 
+/*    */
 
-    "modules-center": ["custom/notifications","custom/logo","clock","custom/updates"],
+    "modules-center": ["custom/notifications","custom/logo","custom/updates"],
 
-    "modules-right":["tray","memory","cpu","temperature","network","bluetooth","backlight","pulseaudio","battery","custom/power"],
+    "modules-right":["tray","custom/weather","memory","cpu","temperature","network","bluetooth","backlight","pulseaudio","battery","clock","custom/power"],
         
     "wlr/taskbar": {
         "format": "{icon}",
@@ -25,17 +26,17 @@
         "on-click": "activate",
         "format": "{icon}",
         "format-icons": {
-            "default": "",
-            "1": "1",
-            "2": "2",
-            "3": "3",
-            "4": "4",
-            "5": "5",
-            "6": "6",
-            "7": "7",
-            "8": "8",
-            "9": "9",
-            "active": "",
+            "default": "",
+/*            "1": "1",*/
+/*            "2": "2",*/
+/*            "3": "3",*/
+/*            "4": "4",*/
+/*            "5": "5",*/
+/*            "6": "6",*/
+/*            "7": "7",*/
+/*            "8": "8",*/
+/*            "9": "9",*/
+            "active": "",
             "urgent": " "
         },
         "persistent-workspaces": {
@@ -60,7 +61,7 @@
 
     "memory": {
         "interval": 5,
-        "format": "{}% ",
+        "format": "{}% ",
         "max-length": 10
     },
 
@@ -113,7 +114,7 @@
     },
 
     "custom/logo": {
-        "format": "",
+        "format": "",
         "tooltip": true,
         "tooltip-format": "Search",
         "on-click": "sleep 0.15 && ~/scripts/app-menu.sh "
@@ -148,7 +149,7 @@
 
     "custom/power": {
         "return-type": "json",
-        "format": "",
+        "format": "󰤁",
         "tooltip": true,
         "tooltip-format": "{uptime}",
         "on-click": "sleep 0.15 && ~/scripts/powermenu.sh "
@@ -193,9 +194,17 @@
     },
     
     "custom/notifications": {
-    "format": "",
-    "tooltip": false,
-    "on-click": "sleep 0.15 && ~/scripts/notifications.sh &"
-    }
+        "format": "",
+        "tooltip": false,
+        "on-click": "sleep 0.15 && ~/scripts/notifications.sh &"
+    },
+    
+    "custom/weather": {
+        "format": "{}",
+        "tooltip": true,
+        "interval": 3600,
+        "exec": "wttrbar --date-format %d/%m --custom-indicator '{ICON} {temp_C}°'",
+        "return-type": "json"
+    },
 
 }
