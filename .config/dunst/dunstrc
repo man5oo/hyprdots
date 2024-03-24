@@ -32,12 +32,12 @@
     
     progress_bar = true
     progress_bar_horizontal_alignment = center
-    highlight='#81c8be'
+    # highlight= "#c6d0f5"  #"#81c8be"
     progress_bar_height = 10
-    progress_bar_frame_width = 0
+    progress_bar_frame_width = 1
     progress_bar_min_width = 200
     progress_bar_max_width = 200
-    progress_bar_corner_radius = 2
+    progress_bar_corner_radius = 8
     icon_corner_radius = 0
 
 
@@ -47,14 +47,14 @@
 
     # separator_height = 2
 
-    padding = 8
+    padding = 10
 
-    horizontal_padding = 8
+    horizontal_padding = 15
 
     text_icon_padding = 0
 
     frame_width = 0
-    #frame_color = "#aaaaaa"
+    frame_color = "#81c8be"
 
     # Size of gap to display between notifications - requires a compositor.
     # If value is greater than 0, separator_height will be ignored and a border
@@ -71,11 +71,11 @@
     # Set to 0 to disable.
     # A client can set the 'transient' hint to bypass this. See the rules
     # section for how to disable this if necessary
-    # idle_threshold = 120
+    idle_threshold = 120
 
     ### Text ###
 
-    font = Roboto 12
+    font = Roboto 14
 
     # The spacing between lines.  If the height is smaller than the
     # font height, it will get raised to the font height.
@@ -115,7 +115,7 @@
     #   %n  progress value if set without any extra characters
     #   %%  Literal %
     # Markup is allowed
-    format = "<b>%s</b>\n%b"
+    format = "<b>%s %n</b>\n%b"
 
     # Alignment of message text.
     # Possible values are "left", "center" and "right".
@@ -150,7 +150,7 @@
 
     # Recursive icon lookup. You can set a single theme, instead of having to
     # define all lookup paths.
-    enable_recursive_icon_lookup = true
+    #enable_recursive_icon_lookup = true
 
     # Set icon theme (only used for recursive icon lookup)
     icon_theme = "Papirus, Adwaita"
@@ -266,18 +266,19 @@
     background = "#232634"
     foreground = "#c6d0f5"
     timeout = 5
-    highlight = #c6d0f5
+    highlight = "#c6d0f5"
 
 [urgency_normal]
     background = "#232634"
     foreground = "#c6d0f5"
     timeout = 5
-    highlight = #c6d0f5
+    highlight = "#c6d0f5" "#81c8be"
 
 [urgency_critical]
     background = "#e78284"
     foreground = "#414559"
     frame_color = "#232634"
+    highlight = "#232634"
     
     timeout = 0
     # Icon for notifications with critical urgency, uncomment to enable

@@ -9,7 +9,7 @@
   min-height: 0;
   /*font-family: Material Design Icons, JetBrainsMono Nerd Font;*/
   font-family: Roboto;
-  font-size: 13px;
+  font-size: 15px;
 }
 
 window#waybar {
@@ -18,23 +18,29 @@ window#waybar {
   transition-duration: 0.5s;
   opacity: 1.0;
   color: @text;
+  margin: 3px 1px;
+  padding: 3px 8px;
 }
 
 window#waybar.hidden {
   opacity: 0.5;
+/*  margin: 3px 1px;*/
+/*  padding: 3px 8px;*/
 }
 
 #workspaces {
   background-color: transparent;
+/*  margin: 3px 1px;*/
+/*  padding: 3px 8px;*/
 }
 
 #workspaces button {
   all: initial; /* Remove GTK theme values (waybar #1351) */
   min-width: 0; /* Fix weird spacing in materia (waybar #450) */
-  box-shadow: inset 0 -3px transparent; /* Use box-shadow instead of border so the text isn't offset */
-  padding: 6px 13px;
-  margin: 6px 3px;
-  border-radius: 6px;
+  box-shadow: inset 0 -5px transparent; /* Use box-shadow instead of border so the text isn't offset */
+  padding: 3px 8px;
+  margin: 3px 2px;
+  border-radius: 3px;
   background-color: @transparent2;
   color: @subtext0;
 }
@@ -58,7 +64,8 @@ window#waybar.hidden {
 #hyprland-window {
 background-color: @crust;
 color: @text;
-margin: 10px;
+margin: 1px 1px;
+margin-left: 5px;
 opacity: unset;
 }
 
@@ -75,11 +82,13 @@ opacity: unset;
 #bluetooth,
 #hyprland-window,
 #custom-updates,
+#custom-logo,
+#custom-notifications,
 #backlight,
 #tray {
   border-radius: 4px;
-  margin: 6px 3px;
-  padding: 6px 12px;
+  margin: 3px 1px;
+  padding: 3px 8px;
   background-color: @crust;
   color: @text;
   opacity: unset;
@@ -93,6 +102,7 @@ opacity: unset;
 #bluetooth {
   background-color: @crust;
   color: @text;
+  font-size: 18;
 }
 
 #backlight {
@@ -109,11 +119,11 @@ opacity: unset;
 }
 
 #custom-logo {
-  padding-right: 7px;
-  padding-left: 7px;
-  margin-left: 5px;
-  font-size: 15px;
-  border-radius: 8px 0px 0px 8px;
+/*  padding-right: 7px;*/
+/*  padding-left: 7px;*/
+/*  margin-left: 5px;*/
+/*  font-size: 15px;*/
+/*  border-radius: 8px 0px 0px 8px;*/
   color: @text;
 }
 
@@ -142,9 +152,9 @@ opacity: unset;
   background-color: #ff0048;
   color: #181825;
   animation-name: blink;
-  animation-duration: 1.5s;
+  animation-duration: 1.0s;
   animation-timing-function: linear;
-  animation-iteration-count: infinite;
+  animation-iteration-count: 10;
   animation-direction: alternate;
 }
 #battery.charging {
@@ -155,17 +165,20 @@ opacity: unset;
 #backlight {
   background-color: @crust;
   color: @text;
+  font-size: 18;
 }
 
 #pulseaudio {
   background-color: @crust;
   color: @text;
+  font-size: 20;
 }
 
 #network {
   background-color: @crust;
   color: @text;
-  padding-right: 17px;
+  padding-right: 10px;
+  font-size: 18;
 }
 
 #clock {

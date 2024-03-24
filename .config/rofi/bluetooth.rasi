@@ -1,39 +1,56 @@
 /*******************************************************
- * ROFI configs i3 powermenu for EndeavourOS NOT ANYMORE IHIH
+ * ROFI configs i3 Apps menu for EndeavourOS
  * Maintainer: joekamprad [joekamprad //a_t// endeavouros.com]
  *******************************************************/
 configuration {
-    font:             "Roboto Regular 12";
-    show-icons:       true;
-    icon-theme:       "Papirus";
-    scroll-method:    1;
-    disable-history:  false;
-    fullscreen:       false;
-    hide-scrollbar:   true;
-    sidebar-mode:     false;
+    font:                "Roboto 12";
+    show-icons:          true;
+    icon-theme:          "Papirus";
+/*    display-drun:        "Apps";*/
+/*    drun-display-format: "{name}";*/
+    scroll-method:       0;
+    disable-history:     false;
+    sidebar-mode:        false;
+    terminal: "/usr/bin/alacritty";
+    
 }
 
 @import "~/.config/rofi/colors.rasi"
 
-
 window {
     background-color: @background;
     border:           0;
-    padding:          10;
-    transparency:     "real";
-    width:            600px;
-    location:         0;
-    border-radius: 8px;
+    padding:          30;
+    border-radius:    20px;
 }
-
 listview {
-    lines:   5;
+    lines:   10;
     columns: 1;
+}
+mainbox {
+    border:  0;
+    padding: 0;
+}
+message {
+    border:       2px 0px 0px;
+    border-color: @separatorcolor;
+    padding:      1px;
+}
+textbox {
+    text-color: @foreground;
+}
+listview {
+    fixed-height: 0;
+    border:       8px 0px 0px;
+    border-color: @separatorcolor;
+    spacing:      8px;
+    scrollbar:    false;
+    padding:      2px 0px 0px;
 }
 element {
     border:  0;
     padding: 4px;
-    border-radius: 6px;
+    border-radius: 12px;
 }
 element-text {
     background-color: inherit;
@@ -76,10 +93,10 @@ element.alternate.active {
     text-color:       @alternate-active-foreground;
 }
 scrollbar {
-    width:        0px;
+    width:        4px;
     border:       0;
     handle-color: @normal-foreground;
-    handle-width: 0px;
+    handle-width: 8px;
     padding:      0;
 }
 mode-switcher {
@@ -111,15 +128,12 @@ prompt {
     spacing:    0;
     text-color: @normal-foreground;
 }
-/*inputbar {*/
-/*    children:   [ prompt,textbox-prompt-colon,entry,case-indicator ];*/
-/*}*/
+inputbar {
+    children:   [ prompt,textbox-prompt-colon,entry,case-indicator ];
+}
 textbox-prompt-colon {
     expand:     false;
     str:        ":";
     margin:     0px 0.3em 0em 0em;
     text-color: @normal-foreground;
 }
-/*mainbox {*/
-/*  children: [listview];*/
-/*}*/

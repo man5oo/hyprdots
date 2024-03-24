@@ -4,20 +4,20 @@
     "layer": "top",
     "position": "top",
     "spacing": 0,
-    "height": 42,
+    "height": 20,
 
     "modules-left": ["hyprland/workspaces","hyprland/window"],
 
-    "modules-center": ["custom/logo","clock","custom/updates"],
+    "modules-center": ["custom/notifications","custom/logo","clock","custom/updates"],
 
-    "modules-right": ["tray","network","bluetooth","memory","cpu","temperature","backlight","pulseaudio","battery","custom/power"],
-    
+    "modules-right":["tray","memory","cpu","temperature","network","bluetooth","backlight","pulseaudio","battery","custom/power"],
+        
     "wlr/taskbar": {
         "format": "{icon}",
         "on-click": "activate",
         "on-click-right": "fullscreen",
         "icon-theme": "WhiteSur",
-        "icon-size": 25,
+        "icon-size": 16,
         "tooltip-format": "{title}"
     },
 
@@ -39,11 +39,11 @@
             "urgent": " "
         },
         "persistent-workspaces": {
-            "1":[],
-            "2":[],
-            "3":[],
-            "4":[],
-            "5":[]
+            "1":[]
+/*            "2":[],*/
+/*            "3":[],*/
+/*            "4":[],*/
+/*            "5":[]*/
         }
     },
 
@@ -76,16 +76,17 @@
     "clock": {
         "tooltip-format": "<tt>{calendar}</tt>",
         "format-alt": "  {:%a, %d %b %Y}",
-        "format": "󰥔   {:%H:%M}"
+        "format": "{:%H:%M}"
     },
 
     "network": {
-        "format-wifi" : "{icon}   {bandwidthUpBytes}  {bandwidthDownBytes}",
+        //"format-wifi" : "{icon}   {bandwidthUpBytes}  {bandwidthDownBytes}",
+        "format-wifi" : "{icon}",
         "format-icons": ["󰤯","󰤟","󰤢","󰤥","󰤨"],
         "format-ethernet": "󰈀   {bandwidthUpBytes}  {bandwidthDownBytes}",
         //"format-alt" : "{icon} wifi ",
         "format-disconnected" : "󰤭",
-	    "tooltip-format-wifi": "{icon} {essid} {signalStrength}%",
+	    "tooltip-format-wifi": "{icon} {essid} ({signalStrength}%)\n {bandwidthUpBytes}  {bandwidthDownBytes}",
         "tooltip-format-ethernet": "󰈀  {ifname}",
 	    "tooltip-format-disconnected": "Disconnected",
 	    "on-click": "sleep 0.15 && ~/scripts/rofi-wifi-menu.sh",
@@ -95,14 +96,17 @@
     },
 
     "pulseaudio": {
-        "format": "{volume}% {icon}",
+        "format": "{icon}",
+        "format-alt": "{volume}% {icon}",
+       // "format-source": "{volume}% ",
+        //"format-source-muted": "",
         "format-bluetooth": "󰂰",
         "nospacing": 1,
-        "tooltip-format": "Volume : {volume}%",
+        "tooltip-format": "Volume: {volume}%",
         "format-muted": "󰝟",
         "format-icons": {
             "headphone": "",
-            "default": ["","󰕿",""]
+            "default": ["󰕿","󰖀","󰕾"]
         },
         "on-click": "pamixer -t",
         "scroll-step": 1
@@ -110,12 +114,13 @@
 
     "custom/logo": {
         "format": "",
-        "tooltip": false,
+        "tooltip": true,
+        "tooltip-format": "Search",
         "on-click": "sleep 0.15 && ~/scripts/app-menu.sh "
     },
 
     "battery": {
-        "format": "{capacity}% {icon}",
+        "format": "{icon}",
         "format-icons": {
             "charging": [
                 "",
@@ -130,7 +135,7 @@
                 "",
                 "",
                 ""
-            ]
+            ],
         },
         "format-full": "Charged ",
         "interval": 5,
@@ -138,20 +143,22 @@
             "warning": 20,
             "critical": 10
         },
-        "tooltip-format": "{time}"
+        "tooltip-format": "{capacity}%\n{time}"
     },
 
     "custom/power": {
+        "return-type": "json",
         "format": "",
-        "tooltip": "{uptime}",
+        "tooltip": true,
+        "tooltip-format": "{uptime}",
         "on-click": "sleep 0.15 && ~/scripts/powermenu.sh "
     },
 
     "temperature": {
         // "thermal-zone": 2,
         // "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
-        "critical-threshold": 80,
-        // "format-critical": "{temperatureC}°C {icon}",
+        "critical-threshold": 75,
+        "format-critical": "{temperatureC}°C {icon}",
         "format": "{temperatureC}°C {icon}",
         "format-icons": ["", "", ""]
     },
@@ -159,24 +166,36 @@
     "cpu": {
         "format": "{usage}% ",
         "tooltip": false,
-	"on-click": "sleep 0.15 && ~/scripts/pcmonitor.sh && sleep"
+	"on-click": "sleep 0.15 && ~/scripts/pcmonitor.sh &"
     },
 
     "backlight": {
-        // "device": "acpi_video1",
-        "format": "{percent}% {icon}",
-        "format-icons": ["", "", "", "", "", "", "", "", ""]
+        "return-type": "json",
+        "device": "intel_backlight",
+        "format": "{icon}",
+        "format-icons": ["", "", "", "", "", "", "", "", ""],
+        "tootltip": true,
+        "tootltip-format": "{percent}%"
     },
 
     "bluetooth": {
-	    "format": "  {status}",
-	    "format-connected": "  {device_alias}",
-	    "format-connected-battery": " {device_alias} ",
+	    "format": "",
+	    "format-on": "󰂯",
+	    "format-off": "󰂲",
+	    "format-connected": "󰂱  {device_alias}",
+	    "format-connected-battery": "󰂱  {device_alias} ",
 	    // "format-device-preference": [ "device1", "device2" ], // preference list deciding the displayed device
 	    "tooltip-format": "{controller_alias}\t{controller_address}\n\n{num_connections} connected",
 	    "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{num_connections} connected\n\n{device_enumerate}",
 	    "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
-	    "tooltip-format-enumerate-connected-battery": "{device_alias}\t{device_address}\t{device_battery_percentage}%"
+	    "tooltip-format-enumerate-connected-battery": "{device_alias}\t{device_address}\t{device_battery_percentage}%",
+	    "on-click": "sleep 0.15 && ~/scripts/blt-connect.sh"
+    },
+    
+    "custom/notifications": {
+    "format": "",
+    "tooltip": false,
+    "on-click": "sleep 0.15 && ~/scripts/notifications.sh &"
     }
 
 }
