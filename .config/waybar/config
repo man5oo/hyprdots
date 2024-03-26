@@ -20,9 +20,10 @@
       
     "wlr/taskbar": {
         "format": "{icon}",
+/*        "active-first": true,*/
         "on-click": "activate",
-        "on-click-right": "fullscreen",
-        "icon-theme": "WhiteSur",
+/*        "on-click-right": "minimize",*/
+        "icon-theme": "Papirus",
         "icon-size": 16,
         "tooltip-format": "{title}"
         },
