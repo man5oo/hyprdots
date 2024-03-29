@@ -2,127 +2,102 @@
  * ROFI configs i3 Apps menu for EndeavourOS
  * Maintainer: joekamprad [joekamprad //a_t// endeavouros.com]
  *******************************************************/
-configuration {
-    font:                "Roboto 12";
-    show-icons:          true;
-    icon-theme:          "Papirus";
-    display-drun:        "Apps";
-    drun-display-format: "{name}";
-    scroll-method:       0;
-    disable-history:     false;
-    sidebar-mode:        false;
-    terminal: "/usr/bin/alacritty";
-    
-}
 
 @import "~/.config/rofi/colors.rasi"
 
+configuration {
+    modi: "run,drun";
+    drun-display-format: "{icon} {name}";
+    location: 0;
+    disable-history: false;
+    display-drun: "   Apps ";
+    display-run: "   Run ";
+    sidebar-mode: true;
+    font:                "Roboto 14";
+    show-icons:          true;
+    icon-theme:          "Papirus";
+    scroll-method:       0;
+    terminal: "/usr/bin/alacritty";
+
+    
+}
+
+sidebar {
+    border: 1;
+    background-color: @background;
+    text-color: @teal;
+    border-color: @teal;
+}
+
 window {
     background-color: @background;
-    border:           0;
-    padding:          30;
+    border:           1;
+    border-color: @teal;
+    padding:          20;
     border-radius:    20px;
 }
 listview {
     lines:   10;
     columns: 3;
 }
-mainbox {
-    border:  0;
-    padding: 0;
-}
+
 message {
-    border:       2px 0px 0px;
-    border-color: @separatorcolor;
+    border-color: @teal;
     padding:      1px;
 }
 textbox {
-    text-color: @foreground;
+    text-color: @teal;
+    border: 1;
+    border-color: @surface0;
 }
 listview {
     fixed-height: 0;
     border:       8px 0px 0px;
-    border-color: @separatorcolor;
     spacing:      8px;
-    scrollbar:    false;
+    scrollbar:    true;
     padding:      2px 0px 0px;
 }
-element {
-    border:  0;
-    padding: 4px;
-    border-radius: 12px;
-}
-element-text {
-    background-color: inherit;
-    text-color:       inherit;
-}
-element.normal.normal {
-    background-color: @normal-background;
-    text-color:       @normal-foreground;
-}
-element.normal.urgent {
-    background-color: @urgent-background;
-    text-color:       @urgent-foreground;
-}
-element.normal.active {
-    background-color: @active-background;
-    text-color:       @active-foreground;
-}
-element.selected.normal {
-    background-color: @surface1;
-    text-color:       @selected-normal-foreground;
-    border-radius: 8px;
-}
-element.selected.urgent {
-    background-color: @selected-urgent-background;
-    text-color:       @selected-urgent-foreground;
-}
-element.selected.active {
-    background-color: @selected-active-background;
-    text-color:       @selected-active-foreground;
-}
-element.alternate.normal {
-    background-color: @alternate-normal-background;
-    text-color:       @alternate-normal-foreground;
-}
-element.alternate.urgent {
-    background-color: @alternate-urgent-background;
-    text-color:       @alternate-urgent-foreground;
-}
-element.alternate.active {
-    background-color: @alternate-active-background;
-    text-color:       @alternate-active-foreground;
-}
+
 scrollbar {
-    width:        4px;
+    width:        3px;
+    border-radius: 5;
     border:       0;
-    handle-color: @normal-foreground;
+    handle-color: @surface0;
     handle-width: 8px;
     padding:      0;
 }
 mode-switcher {
-    border:       2px 0px 0px;
-    border-color: @separatorcolor;
+    padding: 5px;
+    spacing: 0;
+    border: 0;
+    border-radius: 10px;
+    border-color: @teal;
 }
 button {
-    spacing:    0;
-    text-color: @normal-foreground;
+    spacing:    5;
+    padding: 8px;
+    text-color: @surface0;
 }
 button.selected {
-    background-color: @selected-normal-background;
-    text-color:       @selected-normal-foreground;
+    spacing: 5;
+    background-color: @base;
+    text-color:       @foreground;
+    border: 1;
+    border-radius: 8px;
+    border-color: @teal;
 }
+
 inputbar {
-    spacing:    0;
+    children:   [ prompt,entry];
+    spacing:    5;
     text-color: @foreground;
-    background-color: @surface0;
+    background-color: @base;
     padding:    10px;
     border-radius: 10px;
+    border: 0;
+    border-color: @teal;
 }
-case-indicator {
-    spacing:    0;
-    text-color: @normal-foreground;
-}
+
 entry {
     spacing:    0;
     text-color: @foreground;
@@ -131,12 +106,17 @@ prompt {
     spacing:    0;
     text-color: @foreground;
 }
-inputbar {
-    children:   [ prompt,textbox-prompt-colon,entry,case-indicator ];
+
+element {
+    border:  0;
+    border-color: @teal;
+    padding: 4px;
+    border-radius: 10px;
 }
-textbox-prompt-colon {
-    expand:     false;
-    str:        ":";
-    margin:     0px 0.3em 0em 0em;
-    text-color: @foreground;
+element.selected.normal {
+    background-color: @base;
+    text-color:       @selected-normal-foreground;
+    border: 1;
+    border-color: @teal;
 }
+
