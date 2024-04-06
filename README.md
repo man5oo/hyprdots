@@ -6,4 +6,6 @@ Hyprland configuration by manuel
 - Launcher: rofi
 - Theme: catppuccin-frappe
 
-Many thanks to the open source contributors for their software and ricers for their insipration 
+
+NOTE: Work in progress. 
+Many thanks to the open source contributors for their software and ricers for their insipration.
