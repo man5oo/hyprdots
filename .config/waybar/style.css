@@ -47,7 +47,7 @@
       padding: 3px 8px;
       margin: 3px 2px;
       border-radius: 4px;
-      background-color: @transparent2;
+      background-color: @transparent;
       color: @text;
       }
 
@@ -73,7 +73,7 @@
       border-radius: 4px;
       margin: 3px 1px;
       margin-right: 10px;
-      padding: 3px 1px;
+      padding: 3px 8px;
       background-color: @crust;
       color: @text;
       opacity: unset;
@@ -82,11 +82,14 @@
     #taskbar button {
       border-radius: 4px;
       margin: 1px 1px;
-      padding: 1px 8px;
+      padding: 4px 5px;
       }
       
     #taskbar button.active {
       background-color: rgba(129, 200, 190,0.4);
+      border-radius: 4px;
+      margin: 2px 1px;
+      padding: 4px 5px;
       }
 
 /* MODULES */
@@ -110,7 +113,7 @@
     #custom-weather,
     #tray {
       border-radius: 4px;
-      margin: 3px 1px;
+      margin: 3px 2px 3px 2px;
       padding: 3px 8px;
       background-color: @crust;
       color: @text;
@@ -119,8 +122,22 @@
 
 /* MODULES SPECIFICS */
 
-    #bluetooth {
-      font-size: 18;
+    #memory {
+      margin: 3px 0px 3px 2px;
+      border-radius: 4px 0px 0px 4px;
+      padding: 3px 5px 3px 8px;
+      }
+    
+    #cpu {
+      margin: 3px 0px 3px 0px; /*top right bottom left*/
+      border-radius: 0px 0px 0px 0px;      
+      padding: 3px 2px 3px 2px;
+      }
+    
+    #temperature {
+      margin: 3px 2px 3px 0px; /*top right bottom left*/
+      border-radius: 0px 4px 4px 0px;   
+      padding: 3px 8px 3px 5px;   
       }
 
     #custom-power {
@@ -128,21 +145,35 @@
       }
 
     #custom-logo {
-      background-color: @trasparent;
+/*      background-color: @trasparent;*/
       font-size: 18px;
+      margin: 3px 2px 3px 0px; /*top right bottom left*/
+      border-radius: 0px 4px 4px 0px; /*top-left top-right low-right low-left*/
+      padding: 3px 8px 3px 5px;
+      }
+      
+    #custom-updates {
+      margin: 3px 0px 3px 6px;
+      border-radius: 4px 0px 0px 4px;
+      padding: 3px 5px 3px 8px;
+      }
+      
+    #custom-notifications {
+/*      background-color: @trasparent;*/
+      font-size: 18px;
+      margin: 3px 2px 3px 0px; /*top right bottom left*/
+      border-radius: 0px 4px 4px 0px; /*top-left top-right low-right low-left*/
+      padding: 3px 8px 3px 5px;
+      }
+      
+    #clock {
+      margin: 3px 0px 3px 2px;
+      border-radius: 4px 0px 0px 4px;
+      padding: 3px 5px 3px 8px;
       }
 
     #backlight {
       font-size: 18;
-      }
-
-    #pulseaudio {
-      font-size: 20;
-      }
-
-    #network {
-      padding-right: 10px;
-      font-size: 18px;
       }
 
     #custom-power {

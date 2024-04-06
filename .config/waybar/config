@@ -10,11 +10,11 @@
 
 // MODULES POSITION
 
-    "modules-left": ["hyprland/workspaces", "custom/logo", "wlr/taskbar","hyprland/window"], 
+    "modules-left": [ "custom/updates","custom/logo", "wlr/taskbar","hyprland/window"], 
 
-    "modules-center": [],
+    "modules-center": ["hyprland/workspaces"],
 
-    "modules-right":["tray","custom/updates","custom/weather","memory","cpu","temperature","network","bluetooth","backlight","pulseaudio","battery","clock","custom/notifications","custom/power"],
+    "modules-right":["custom/weather","memory","cpu","temperature","backlight","tray","battery","clock","custom/notifications","custom/power"],
 
 // MODULES
       
@@ -38,7 +38,10 @@
             "urgent": " "
             },
         "persistent-workspaces": {
-            "1":[]
+            "1":[],
+            "2":[],
+            "3":[],
+            "4":[]
             }
         },
 
@@ -72,38 +75,6 @@
         "tooltip-format": "<tt>{calendar}</tt>",
         "format-alt": "  {:%a, %d %b %Y}",
         "format": "{:%H:%M}"
-        },
-
-    "network": {
-        //"format-wifi" : "{icon}   {bandwidthUpBytes}  {bandwidthDownBytes}",
-        "format-wifi" : "{icon}",
-        "format-icons": ["󰤯","󰤟","󰤢","󰤥","󰤨"],
-        "format-ethernet": "󰈀",
-        //"format-alt" : "{icon}  {bandwidthUpBytes}  {bandwidthDownBytes}",
-        "format-disconnected" : "󰤭",
-	    "tooltip-format-wifi": "{icon} {essid} ({signalStrength}%)\n {bandwidthUpBytes}  {bandwidthDownBytes}",
-        "tooltip-format-ethernet": "󰈀  {ifname}",
-	    "tooltip-format-disconnected": "Disconnected",
-	    "on-click": "sleep 0.15 && ~/scripts/rofi-wifi-menu.sh",
-        "interval": 5,
-	    "nospacing": 1,
-        },
-
-    "pulseaudio": {
-        "format": "{icon}",
-        "format-alt": "{volume}% {icon}",
-        //"format-source": "{volume}% ",
-        //"format-source-muted": "",
-        "format-bluetooth": "󰂰",
-        "nospacing": 1,
-        "tooltip-format": "Volume: {volume}% ",
-        "format-muted": "󰝟",
-        "format-icons": {
-            "headphone": "",
-            "default": ["󰕿","󰖀","󰕾"]
-            },
-        "on-click": "pamixer -t",
-        "scroll-step": 1
         },
 
     "custom/logo": {
@@ -160,19 +131,6 @@
 /*        "tootltip-format": "{percent}%"*/
         },
 
-    "bluetooth": {
-	    "format": "",
-	    "format-on": "󰂯",
-	    "format-off": "󰂲",
-	    "format-connected": "󰂱  {device_alias}",
-	    "format-connected-battery": "󰂱  {device_alias} ",
-	    // "format-device-preference": [ "device1", "device2" ], // preference list deciding the displayed device
-	    "tooltip-format": "{controller_alias}\t{controller_address}\n\n{num_connections} connected",
-	    "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{num_connections} connected\n\n{device_enumerate}",
-	    "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
-	    "tooltip-format-enumerate-connected-battery": "{device_alias}\t{device_address}\t{device_battery_percentage}%",
-	    "on-click": "sleep 0.15 && ~/scripts/blt-connect.sh"
-        },
     
     "custom/notifications": {
         "format": "",
