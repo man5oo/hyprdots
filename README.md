@@ -3,7 +3,7 @@ Hyprland configuration by manuel
 - Terminal: alacritty
 - Shell: zsh
 - File Manager: pcmanfm
-- Launcher: rofi
+- Launcher: wofi
 - Theme: catppuccin-frappe
 
 
