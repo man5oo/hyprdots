@@ -81,7 +81,7 @@
         "format": "",
         "tooltip": true,
         "tooltip-format": "Search",
-        "on-click": "sleep 0.15 && ~/scripts/app-menu.sh "
+        "on-click": "wofi --config ~/.config/wofi/config --style ~/.config/wofi/style.css "
         },
 
     "battery": {

@@ -1,0 +1,116 @@
+
+@import "/home/manuel/.config/wofi/frappe.css";
+
+* {
+  font-family: Roboto;
+  font-size: 18px;
+}
+
+/* Window */
+window {
+  margin: 0px;
+  padding: 10px;
+  border: 1px solid @teal;
+/*  border-color: solid @teal;*/
+  border-radius: 10px;
+  background-color: @transparent1;
+  animation: slideIn 0.5s ease-in-out both;
+}
+
+/* Slide In */
+@keyframes slideIn {
+  0% {
+     opacity: 0;
+  }
+
+  100% {
+     opacity: 1;
+  }
+}
+
+/* Inner Box */
+#inner-box {
+  margin: 5px;
+  padding: 10px;
+  border: 0px;
+  background-color: @transparent;
+  animation: fadeIn 0.5s ease-in-out both;
+}
+
+/* Fade In */
+@keyframes fadeIn {
+  0% {
+     opacity: 0;
+  }
+
+  100% {
+     opacity: 1;
+  }
+}
+
+/* Outer Box */
+#outer-box {
+  margin: 5px;
+  padding: 10px;
+  border: 0px;
+  background-color: @transparent;
+}
+
+/* Scroll */
+#scroll {
+  margin: 0px;
+  padding: 10px;
+  border: none;
+  background-color: @transparent;
+}
+
+/* Input */
+#input {
+  margin: 5px 20px;
+  padding: 10px;
+  border: 1px solid @transparentsurface0;
+  border-radius: 8px;
+  color: @text;
+  background-color: @transparentsurface0;
+  animation: fadeIn 0.5s ease-in-out both;
+}
+
+#input image {
+    border: none;
+    color: @teal;
+}
+
+#input * {
+  outline: 1px solid @red!important;
+}
+
+/* Text */
+#text {
+  margin: 5px;
+  border: none;
+  color: @text;
+  animation: fadeIn 0.5s ease-in-out both;
+}
+
+#entry {
+  background-color: @transparent;
+}
+
+#entry arrow {
+  border: none;
+  color: @teal;
+}
+
+/* Selected Entry */
+#entry:selected {
+  border: 1px solid @teal;
+  border-radius: 8px;
+}
+
+#entry:selected #text {
+  color: @text;
+}
+
+#entry:drop(active) {
+  background-color: @teal!important;
+}

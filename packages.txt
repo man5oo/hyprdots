@@ -10,6 +10,7 @@ bluez 5.73-4
 bluez-utils 5.73-4
 brightnessctl 0.5.1-2
 catppuccin-gtk-theme-frappe 0.7.1-1
+cbatticon 1.6.13-1
 dmenu 5.3-2
 dunst 1.10.0-1
 efibootmgr 18-3
@@ -27,6 +28,7 @@ hyprpaper 0.6.0-4
 hyprshot 1.2.3-1
 intel-ucode 20240312-1
 iwd 2.17-2
+libappindicator-gtk2 12.10.0.r298-3
 libnotify 0.8.3-1
 libreoffice-fresh 24.2.2-2
 linux 6.8.2.arch2-1
@@ -50,7 +52,6 @@ python-pexpect 4.9.0-1
 qt5-wayland 5.15.13+kde+r60-1
 ranger 1.9.3-10
 rhythmbox 3.4.7-1
-rofi-lbonn-wayland 1.7.5+wayland3-1
 solaar 1.1.11-4
 spotify-launcher 0.5.4-1
 thunderbird 115.9.0-1
@@ -58,8 +59,8 @@ tlp 1.6.1-1
 tlp-rdw 1.6.1-1
 tlpui 2:1.6.4-2
 ttf-font-awesome 6.5.2-1
-ttf-nerd-fonts-symbols 3.1.1-1
-ttf-nerd-fonts-symbols-mono 3.1.1-1
+ttf-nerd-fonts-symbols 3.2.0-1
+ttf-nerd-fonts-symbols-mono 3.2.0-1
 ttf-roboto 2.138-4
 ttf-roboto-mono 3.000-2
 ttf-weather-icons 2.0.12-1
