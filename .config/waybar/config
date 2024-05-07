@@ -14,7 +14,7 @@
 
     "modules-center": ["hyprland/workspaces"],
 
-    "modules-right":["custom/weather","memory","cpu","temperature","backlight","tray","battery","clock","custom/notifications","custom/power"],
+    "modules-right":["custom/weather","memory","cpu","temperature","backlight","bluetooth","network","tray","battery","pulseaudio","clock","custom/notifications","custom/power"],
 
 // MODULES
       
@@ -85,7 +85,7 @@
         },
 
     "battery": {
-        "format": "{icon}",
+        "format": "{capacity}% {icon}",
         "format-icons": {
             "charging": ["","","","",""],
             "default": ["","","","",""],
@@ -104,7 +104,7 @@
         "format": "󰤁",
         "tooltip": true,
         "tooltip-format": "{uptime}",
-        "on-click": "sleep 0.15 && ~/scripts/powermenu.sh "
+        "on-click": "sleep 0.15 && ~/.config/scripts/powermenu.sh "
         },
 
     "temperature": {
@@ -126,11 +126,54 @@
         "return-type": "json",
         "device": "intel_backlight",
         "format": "{icon}",
-        "format-icons": ["", "", "", "", "", "", "", "", ""],
+        "format-icons": ["󰃞","󰃟","󰃠"],
         "tootltip-format": "{percent}%",
 /*        "tootltip-format": "{percent}%"*/
         },
 
+"bluetooth": {
+	"format": " {status}",
+	"format-connected": " {device_alias}",
+	"format-connected-battery": " {device_alias} {device_battery_percentage}%",
+	// "format-device-preference": [ "device1", "device2" ], // preference list deciding the displayed device
+	"tooltip-format": "{controller_alias}\t{controller_address}\n\n{num_connections} connected",
+	"tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{num_connections} connected\n\n{device_enumerate}",
+	"tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
+	"tooltip-format-enumerate-connected-battery": "{device_alias}\t{device_address}\t{device_battery_percentage}%",
+    "on-click": "~/.config/scripts/wofi-bluetooth.sh"
+},
+
+"network": {
+    "interface": "wlan0",
+    "format": "{ifname}",
+    "format-wifi": "{signalStrength}% ",
+    "format-ethernet": "{ipaddr}/{cidr} 󰊗",
+    "format-disconnected": "", //An empty format will hide the module.
+    "tooltip-format": "{ifname} via {gwaddr} 󰊗",
+    "tooltip-format-wifi": "{essid} ({signalStrength}%) ",
+    "tooltip-format-ethernet": "{ifname} ",
+    "tooltip-format-disconnected": "Disconnected",
+    "max-length": 50,
+    "on-click": "~/.config/scripts/wofi-wifi.sh"
+},
+
+    "pulseaudio": {
+    "format": "{volume}% <span size='140%'>{icon}</span>",
+    "format-bluetooth": "{volume}% {icon}",
+    "format-muted": "",
+    "format-icons": {
+        "headphone": "",
+        "hands-free": "",
+        "headset": "",
+        "phone": "",
+        "portable": "",
+        "car": "",
+        "default": ["󰕿","󰖀","󰕾"]
+    },
+    "scroll-step": 1,
+    "on-click": "pavucontrol",
+    "ignored-sinks": ["Easy Effects Sink"]
+    },
     
     "custom/notifications": {
         "format": "",

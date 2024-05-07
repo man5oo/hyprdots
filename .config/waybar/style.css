@@ -11,16 +11,16 @@
     min-height: 0;
     /*font-family: Material Design Icons, JetBrainsMono Nerd Font;*/
     font-family: Roboto, Weather Icons;
-    font-size: 15px;
+    font-size: 14px;
     }
 
 /* WINDOWS */
 
     window#waybar {
-      background-color: @transparent1;
+      background-color: @crust;
       transition-property: background-color;
       transition-duration: 0.5s;
-      opacity: 1.0;
+      opacity: 0.6;
       color: @teal;
       margin: 3px 1px;
       padding: 3px 8px;
@@ -160,7 +160,7 @@
       
     #custom-notifications {
 /*      background-color: @trasparent;*/
-      font-size: 18px;
+      font-size: 16px;
       margin: 3px 2px 3px 0px; /*top right bottom left*/
       border-radius: 0px 4px 4px 0px; /*top-left top-right low-right low-left*/
       padding: 3px 8px 3px 5px;
@@ -192,8 +192,8 @@
     #battery.warning,
     #battery.critical,
     #battery.urgent {
-      background-color: @red;
-      color: @text;
+      background-color: @crust;
+      color: @red;
       animation-name: blink;
       animation-duration: 1.0s;
       animation-timing-function: linear;
@@ -201,8 +201,8 @@
       animation-direction: alternate;
     }
     #battery.charging {
-      background-color: @green;
-      color: @crust;
+      background-color: @crust;
+      color: @green;
     }
 
 /* TOOLTIP */
